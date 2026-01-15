@@ -1,98 +1,72 @@
-/* General Reset */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-}
-
-header {
-    background: #444;
-    color: #fff;
-    padding: 1rem 2rem;
+.login-page {
+    background-color: #141414; /* Dark Background */
+    color: #ffffff; /* White text */
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
 }
 
-header h1 {
-    margin: 0;
+.login-page h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
 }
 
-header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-header nav ul li {
-    margin-left: 1rem;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-#search {
-    padding: 1rem;
-    background: #f4f4f4;
-    text-align: center;
-}
-
-#search input {
-    padding: 0.5rem;
-    width: 80%;
-    max-width: 600px;
-}
-
-#filters {
-    padding: 1rem;
-    text-align: center;
-}
-
-.filter-btn {
-    margin: 0.5rem;
-    padding: 0.5rem 1rem;
+.login-page input {
+    background-color: #333; /* Input background */
     border: none;
-    background: #007BFF;
-    color: #fff;
+    padding: 15px;
+    margin: 10px 0;
+    width: 300px;
+    color: #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.login-page input:hover {
+    background-color: #555; /* Darker on hover */
+}
+
+.login-page button {
+    background-color: #e50914; /* Netflix Red */
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
     cursor: pointer;
-    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s;
 }
 
-.filter-btn:hover {
-    background: #0056b3;
+.login-page button:hover {
+    background-color: #f40612; /* Darker Red on hover */
 }
 
-#recommendations {
-    padding: 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+.recommendations {
+    background-color: #141414; /* Dark Background */
+    color: #ffffff;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
 }
 
-.movie-card {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+.recommendations h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.recommendations .movie {
+    margin: 10px;
+    display: inline-block;
+}
+
+.recommendations .movie img {
+    border-radius: 8px;
+    width: 200px;
     transition: transform 0.3s;
 }
 
-.movie-card:hover {
-    transform: scale(1.05);
-}
-
-.movie-card img {
-    width: 100%;
-}
-
-.movie-card .info {
-    padding: 1rem;
-}
-
-.movie-card .info h3 {
-    margin: 0 0 0.5rem;
+.recommendations .movie img:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
 }
