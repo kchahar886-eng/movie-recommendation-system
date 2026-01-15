@@ -1,18 +1,116 @@
 /* General Reset */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #fff;
+    background-color: #141414;
+}
+
+/* Login Screen Styles */
+#login-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #141414;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1920') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.login-content {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 60px 68px 40px;
+    border-radius: 4px;
+    max-width: 450px;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    color: #E50914;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 28px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.login-content h1 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 28px;
+    font-weight: 500;
+}
+
+.input-group {
+    margin-bottom: 16px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 16px 20px;
+    background: #333;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: background 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    background: #454545;
+}
+
+.input-group input::placeholder {
+    color: #8c8c8c;
+}
+
+.error-message {
+    color: #E87C03;
+    font-size: 13px;
+    margin-bottom: 16px;
+    min-height: 20px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 16px;
+    background: #E50914;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+    background: #f40612;
+}
+
+/* App Container */
+#app-container {
+    background-color: #141414;
+    min-height: 100vh;
 }
 
 header {
-    background: #444;
+    background: rgba(0, 0, 0, 0.9);
     color: #fff;
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 header h1 {
@@ -33,18 +131,38 @@ header nav ul li {
 header nav ul li a {
     color: #fff;
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #E50914;
 }
 
 #search {
-    padding: 1rem;
-    background: #f4f4f4;
+    padding: 2rem 1rem;
+    background: rgba(20, 20, 20, 0.8);
     text-align: center;
 }
 
 #search input {
-    padding: 0.5rem;
+    padding: 1rem;
     width: 80%;
     max-width: 600px;
+    background: #333;
+    border: 2px solid #555;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+#search input:focus {
+    outline: none;
+    border-color: #E50914;
+}
+
+#search input::placeholder {
+    color: #8c8c8c;
 }
 
 #filters {
@@ -54,45 +172,66 @@ header nav ul li a {
 
 .filter-btn {
     margin: 0.5rem;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.5rem;
     border: none;
-    background: #007BFF;
+    background: #E50914;
     color: #fff;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 .filter-btn:hover {
-    background: #0056b3;
+    background: #f40612;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(229, 9, 20, 0.4);
 }
 
 #recommendations {
     padding: 2rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    background: #141414;
 }
 
 .movie-card {
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    background: #1f1f1f;
+    border: none;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .movie-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    z-index: 10;
 }
 
 .movie-card img {
     width: 100%;
+    height: 350px;
+    object-fit: cover;
 }
 
 .movie-card .info {
-    padding: 1rem;
+    padding: 1.25rem;
+    background: #1f1f1f;
 }
 
 .movie-card .info h3 {
     margin: 0 0 0.5rem;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.movie-card .info p {
+    color: #b3b3b3;
+    font-size: 0.9rem;
+    margin: 0.25rem 0;
 }
