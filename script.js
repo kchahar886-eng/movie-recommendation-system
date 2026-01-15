@@ -36,6 +36,46 @@ const movies = [
     }
 ];
 
+// Login functionality
+const loginForm = document.getElementById("login-form");
+const loginContainer = document.getElementById("login-container");
+const appContainer = document.getElementById("app-container");
+const errorMessage = document.getElementById("error-message");
+
+loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+    
+    // Client-side validation
+    if (!email || !password) {
+        errorMessage.textContent = "Please fill in all fields.";
+        return;
+    }
+    
+    // Simple email validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        errorMessage.textContent = "Please enter a valid email address.";
+        return;
+    }
+    
+    if (password.length < 4) {
+        errorMessage.textContent = "Password must be at least 4 characters long.";
+        return;
+    }
+    
+    // Simulate successful login
+    errorMessage.textContent = "";
+    loginContainer.style.display = "none";
+    appContainer.style.display = "block";
+    
+    // Initialize the movie display after login
+    displayMovies();
+});
+
+// Movie recommendation functionality
 const searchBar = document.getElementById("search-bar");
 const filterButtons = document.querySelectorAll(".filter-btn");
 const recommendationsSection = document.getElementById("recommendations");
@@ -64,7 +104,7 @@ function displayMovies(filterGenre = "") {
     });
 }
 
-displayMovies();
+// Don't display movies on initial load - wait for login
 
 searchBar.addEventListener("input", (e) => {
     const searchValue = e.target.value.toLowerCase();

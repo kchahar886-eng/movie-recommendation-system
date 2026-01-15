@@ -7,31 +7,52 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Movie Recommendation System</h1>
-        <nav>
-            <ul>
-                <li><a href="#search">Search</a></li>
-                <li><a href="#filters">Filters</a></li>
-                <li><a href="#recommendations">Recommendations</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="search">
-            <input type="text" id="search-bar" placeholder="Search for movies...">
-        </section>
-        <section id="filters">
-            <button class="filter-btn" data-genre="action">Action</button>
-            <button class="filter-btn" data-genre="comedy">Comedy</button>
-            <button class="filter-btn" data-genre="drama">Drama</button>
-            <button class="filter-btn" data-genre="romance">Romance</button>
-            <button class="filter-btn" data-genre="thriller">Thriller</button>
-        </section>
-        <section id="recommendations">
-            <!-- Movie cards will be dynamically injected here -->
-        </section>
-    </main>
+    <!-- Login Screen -->
+    <div id="login-container">
+        <div class="login-content">
+            <div class="logo">MOVIEFLIX</div>
+            <h1>Sign In</h1>
+            <form id="login-form">
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <div class="error-message" id="error-message"></div>
+                <button type="submit" class="login-btn">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main App (Hidden Initially) -->
+    <div id="app-container" style="display: none;">
+        <header>
+            <h1>Movie Recommendation System</h1>
+            <nav>
+                <ul>
+                    <li><a href="#search">Search</a></li>
+                    <li><a href="#filters">Filters</a></li>
+                    <li><a href="#recommendations">Recommendations</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="search">
+                <input type="text" id="search-bar" placeholder="Search for movies...">
+            </section>
+            <section id="filters">
+                <button class="filter-btn" data-genre="action">Action</button>
+                <button class="filter-btn" data-genre="comedy">Comedy</button>
+                <button class="filter-btn" data-genre="drama">Drama</button>
+                <button class="filter-btn" data-genre="romance">Romance</button>
+                <button class="filter-btn" data-genre="thriller">Thriller</button>
+            </section>
+            <section id="recommendations">
+                <!-- Movie cards will be dynamically injected here -->
+            </section>
+        </main>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
